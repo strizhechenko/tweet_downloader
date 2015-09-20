@@ -7,7 +7,6 @@ import threading
 import sys
 from ConfigParser import ConfigParser
 
-
 class TwiBot(threading.Thread):
 
     def conf2api(self):
@@ -22,7 +21,7 @@ class TwiBot(threading.Thread):
         return tweepy.API(auth)
         
 
-    def __init__(self, config=os.getenv('HOME') + '/etc/twibot.ini'):
+    def __init__(self, config=config):
             threading.Thread.__init__(self)
     	self.config = config
     	self.api = self.conf2api()
