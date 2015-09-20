@@ -1,14 +1,9 @@
 from twitter import TwiBot
 import json, os
 
-HOME = os.getenv('HOME')
-
-cache = HOME + '/tweet_cache.json'
-config = HOME + '/etc/twibot.ini'
-
 
 def tweets_save(tweets):
-    open(cache, 'w').write(json.dumps(tweets, indent=4))
+    open(TwiBot.cache, 'w').write(json.dumps(tweets, indent=4))
 
 
 def tweets_fetch_all():
